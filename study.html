@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>독서 활동 기록장</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f3f5f9;
+            color: #222;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 35px;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #263b70;
+        }
+
+        .description {
+            margin-bottom: 30px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #526fca;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: #405bb5;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #304890;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            .container {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>독서 활동 기록장</h1>
+
+        <p class="description">
+            오늘 읽은 책과 나의 감상을 기록해 보세요.
+        </p>
+
+        <!-- Apps Script 웹 앱으로 POST 방식 제출 -->
+        <form
+            method="POST"
+            action="https://script.google.com/macros/s/AKfycbwEdw3UYk0hdLKF4arXu65vAzqNv65FEh9BUcmEGgZdFExih1RJRZd9DzV7tffwViVS/exec"
+        >
+
+            <div class="form-group">
+                <label for="bookTitle">책 제목</label>
+                <input
+                    type="text"
+                    id="bookTitle"
+                    name="bookTitle"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="readingMinutes">독서 시간(분)</label>
+                <input
+                    type="number"
+                    id="readingMinutes"
+                    name="readingMinutes"
+                    step="any"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="review">한 줄 감상</label>
+                <textarea
+                    id="review"
+                    name="review"
+                    rows="5"
+                ></textarea>
+            </div>
+
+            <button type="submit">기록 저장</button>
+
+        </form>
+
+    </main>
+
+    <script>
+        // 이 초기 버전은 브라우저의 기본 form 제출 기능을 사용합니다.
+        // 별도의 JavaScript 전송이나 입력 검사는 사용하지 않습니다.
+        console.log("독서 활동 기록장이 준비되었습니다.");
+    </script>
+
+</body>
+</html>
